@@ -1,4 +1,4 @@
-class UserMailer < ApplicationMailer
+class UserMailer < ActionMailer::Base
   default from: 'no-reply@jungle.com'
 
   def receipt_email(order)
