@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.length > 0 %>
   <div class="order-summary jumbotron">
     <table class="table table-bordered">
       <thead>
@@ -48,6 +49,12 @@
         </script>
       <% end %>
     </div>
-  </div>
+      </div>
+  <% else %>
+    <h2>There is nothing in your cart!</h2>
+    <p>
+      Add items <%= link_to "here", root_path %>!
+    </p>
+  <% end %>
 
 </section>
