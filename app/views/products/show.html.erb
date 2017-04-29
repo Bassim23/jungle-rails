@@ -22,6 +22,7 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+
         </dl>
       </div>
     </div>
@@ -70,14 +71,16 @@
     </div>
     <div class="panel-body">
       <ul class="list-group">
+      <% if @product.reviews.count > 0 %>
         <% @product.reviews.reverse.each do |review| %>
           <li class="list-group-item">
-            <strong><%= review.rating %>/5</strong>
+            <strong><%= review.rating %></strong>
             <br />
             <%= review.description %>
 
-            <% if review.user_id == current_user.id %>
-              <%= link_to 'Destroy', [@product, review], method: :delete, data: { confirm: "Are you sure?" } %>
+            <% if current_user && review.user_id == current_user.id %>
+              <%= link_to 'Delete', [@product, review], method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
             <% end %>
 
           </li>

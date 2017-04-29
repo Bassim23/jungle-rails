@@ -36,6 +36,8 @@ puts "Re-creating Products ..."
 Product.destroy_all
 
 
+
+
 prod1 = cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
@@ -53,30 +55,6 @@ prod2 = cat1.products.create!({
 })
 
 prod3 = cat1.products.create!({
-  name:  'Hipster Hat',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel3.jpg'),
-  quantity: 4,
-  price: 34.49
-})
-
-cat1.products.create!({
-  name:  'Men\'s Classy shirt',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel1.jpg'),
-  quantity: 10,
-  price: 64.99
-})
-
-cat1.products.create!({
-  name:  'Women\'s Zebra pants',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel2.jpg'),
-  quantity: 18,
-  price: 124.99
-})
-
-cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),

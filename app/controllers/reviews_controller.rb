@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :authorize
 
+  def show
+    @reviews = Review.all.where(user_id: params[:user_id])
+  end
+
   def create
     @product = Product.find(params[:product_id])
     review = @product.reviews.new(review_params)
